@@ -37,7 +37,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-paper">
+    <section id="faq" className="scroll-mt-[calc(4rem+env(safe-area-inset-top)+1rem)] md:scroll-mt-24 bg-paper">
       <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-28 sm:px-8 lg:grid-cols-12 lg:py-40">
         <div className="lg:col-span-4">
           <Reveal className="lg:sticky lg:top-28">

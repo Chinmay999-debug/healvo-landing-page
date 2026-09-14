@@ -57,7 +57,7 @@ export function DayInClinic() {
   const desktop = useMediaQuery("(min-width: 1024px)");
 
   return (
-    <section id="day" className="relative bg-night text-white">
+    <section id="day" className="relative scroll-mt-[calc(4rem+env(safe-area-inset-top)+1rem)] md:scroll-mt-24 bg-night text-white">
       <div aria-hidden className="night-grid pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto max-w-[1240px] px-5 pt-28 sm:px-8 lg:pt-40">

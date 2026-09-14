@@ -212,7 +212,7 @@ export function LiveChart() {
   const hoverMeta = hovered && hovered !== view.selected ? findTooth(hovered) : undefined;
 
   return (
-    <div ref={ref} id="chart" className="scroll-mt-24">
+    <div ref={ref} id="chart" className="scroll-mt-[calc(4rem+env(safe-area-inset-top)+1rem)] md:scroll-mt-24">
       <div className="mb-4 hidden items-end justify-between gap-4 px-1 font-mono text-[11px] tracking-[0.16em] text-muted uppercase sm:flex">
         {labels(false)}
       </div>

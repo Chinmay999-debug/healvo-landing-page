@@ -28,7 +28,7 @@ export function Pricing() {
   const price = useCountUp(annual ? 5988 : 499, inView, 700);
 
   return (
-    <section id="pricing" className="border-y border-line bg-paper-2/70">
+    <section id="pricing" className="border-y border-line scroll-mt-[calc(4rem+env(safe-area-inset-top)+1rem)] md:scroll-mt-24 bg-paper-2/70">
       <div className="mx-auto grid max-w-[1240px] gap-16 px-5 py-28 sm:px-8 lg:grid-cols-12 lg:py-40">
         <Reveal className="lg:col-span-6">
           <p className="eyebrow text-muted">Pricing</p>
