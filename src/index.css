@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Healvo brand — same navy/teal as the product */
+  --color-ink: #0f223a;
+  --color-ink-2: #3d4b5e;
+  --color-teal: #0ea5b7;
+  --color-teal-bright: #2dd4bf;
+  --color-teal-deep: #0b7f8d;
+  --color-night: #0a1626;
+
+  /* Paper — warmed from the product's own enamel gradient (#f6f1e7) */
+  --color-paper: #f7f4ee;
+  --color-paper-2: #efe9de;
+  --color-line: #e4ddd0;
+  --color-line-strong: #d3cab9;
+  --color-muted: #77736b;
+  --color-muted-soft: #a19c92;
+
+  --shadow-board: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 40px 90px -50px rgba(15, 34, 58, 0.45),
+    0 2px 6px -2px rgba(15, 34, 58, 0.08);
+  --shadow-scene: 0 60px 120px -40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Fine paper grain over everything — breaks the flat "rendered" look. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: rgba(14, 165, 183, 0.22);
+}
+
+@layer components {
+  .wordmark {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .eyebrow::before {
+    content: "";
+    height: 1px;
+    width: 2.5rem;
+    background: currentColor;
+    opacity: 0.4;
+  }
+
+  .paper-grid {
+    background-image: linear-gradient(to right, rgba(15, 34, 58, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 34, 58, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .night-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-radius: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn .arrow {
+    transition: transform 0.25s ease;
+  }
+  .btn:hover .arrow {
+    transform: translateX(3px);
+  }
+  .btn-ink {
+    background: var(--color-ink);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 1px 2px rgba(15, 34, 58, 0.25),
+      0 10px 24px -10px rgba(15, 34, 58, 0.55);
+  }
+  .btn-ink:hover {
+    background: #182f4d;
+  }
+  .btn-teal {
+    background: var(--color-teal-bright);
+    color: var(--color-night);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 30px -12px rgba(45, 212, 191, 0.6);
+  }
+  .btn-teal:hover {
+    background: #5eead4;
+  }
+  .btn-ghost-dark {
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+  .btn-ghost-dark:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+    padding-bottom: 2px;
+    transition: background-size 0.35s ease;
+  }
+  .link-underline:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.1, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.1, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  .reveal[data-in] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Headline phrase-mask rise (hero) */
+  .phrase {
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+  .phrase > span {
+    display: inline-block;
+    animation: rise 1.15s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+  }
+  .hero-fade {
+    animation: fade-up 1s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  }
+
+  /* Dental chart */
+  .tooth-in {
+    opacity: 0;
+  }
+  [data-play] .tooth-in {
+    animation: tooth-in 0.8s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  }
+  .tooth-btn {
+    cursor: pointer;
+    outline: none;
+  }
+  .tooth-hover {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1);
+  }
+  @media (hover: hover) {
+    .tooth-btn:hover .tooth-hover {
+      transform: scale(1.1);
+    }
+  }
+  .tooth-btn:active .tooth-hover {
+    transform: scale(0.96);
+  }
+  .halo-in {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: halo-in 0.4s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+  }
+  .tip-in {
+    animation: tip-in 0.18s ease-out both;
+  }
+  /* Phones: the chart scrolls sideways, so tooth numbers can be larger */
+  @media (max-width: 639px) {
+    .tooth-label {
+      font-size: 13px;
+    }
+  }
+  .tooth-btn:focus-visible .tooth-hover {
+    filter: drop-shadow(0 0 3px #0ea5b7);
+  }
+  .click-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ring 0.9s ease-out both;
+  }
+
+  .live-dot {
+    position: relative;
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    border-radius: 9999px;
+    background: var(--color-teal);
+  }
+  .live-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Micro-motion used inside product scenes */
+  .pop-in {
+    animation: pop 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) both;
+  }
+  .fade-up {
+    animation: fade-up 0.55s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  }
+  .row-in {
+    overflow: hidden;
+    animation: row-in 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  }
+  .caret::after {
+    content: "";
+    display: inline-block;
+    width: 1.5px;
+    height: 1.05em;
+    margin-left: 1px;
+    vertical-align: -0.16em;
+    background: currentColor;
+    animation: blink 1s steps(1) infinite;
+  }
+  .dots span {
+    height: 6px;
+    width: 6px;
+    border-radius: 9999px;
+    background: #97a1ad;
+    animation: dot 1.2s ease-in-out infinite both;
+  }
+  .dots span:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  .dots span:nth-child(3) {
+    animation-delay: 0.32s;
+  }
+  .stamp {
+    animation: stamp 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  }
+
+  /* Stroke drawing (paths use pathLength="1") */
+  .draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  [data-in] .draw {
+    animation: draw 2.2s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+  }
+
+  /* Receipt printing out of its slot */
+  .print {
+    transform: translateY(-101%);
+  }
+  [data-in] .print {
+    animation: print 1.9s cubic-bezier(0.45, 0.05, 0.3, 1) 0.15s forwards;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tooth-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--from, -14px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes halo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tip-in {
+  from {
+    opacity: 0;
+    margin-top: 4px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes ring {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  12% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0.2;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes row-in {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 90px;
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes dot {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes stamp {
+  from {
+    opacity: 0;
+    transform: rotate(-12deg) scale(1.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-12deg) scale(1);
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes print {
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
