@@ -254,12 +254,9 @@ export function LiveChart() {
           <div className="min-w-0 px-2 pt-4 pb-4 sm:px-6">
             <div
               ref={scrollerRef}
-              onTouchStart={() => {
-                userScrolled.current = true;
-              }}
-              className="overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [scrollbar-width:none] sm:[mask-image:none]"
+              className="w-full"
             >
-              <div className="relative min-w-[620px] sm:min-w-0">
+              <div className="relative w-full">
                 <svg
                   viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
                   className="block h-auto w-full select-none"
@@ -454,7 +451,7 @@ export function LiveChart() {
         {labels(true)}
       </div>
 
-      <ol className="mt-5 grid gap-x-8 gap-y-2 px-1 font-mono text-[11.5px] leading-relaxed text-muted sm:grid-cols-3">
+      <ol className="mt-5 hidden sm:grid gap-x-8 gap-y-2 px-1 font-mono text-[11.5px] leading-relaxed text-muted sm:grid-cols-3">
         <li>
           <span className="text-ink">01</span> FDI two-digit notation, the way you were taught
         </li>
