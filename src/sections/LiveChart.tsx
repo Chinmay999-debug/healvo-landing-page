@@ -240,7 +240,7 @@ export function LiveChart() {
                   Demo record
                 </span>
               </p>
-              <p className="text-[12.5px] text-muted">Age 27 · Female · +91 98765 43210</p>
+              <p className="text-[12.5px] text-muted">Age 27 · Female</p>
             </div>
           </div>
           <dl className="grid grid-cols-3 gap-6 sm:ml-auto sm:gap-12">
