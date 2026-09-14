@@ -238,15 +238,12 @@ function DayRibbon({ active }: { active: number }) {
 function MobileStory() {
   return (
     <div className="relative mx-auto max-w-[640px] px-5 pt-12 pb-28">
+      {/* Visual vertical timeline track */}
       <div className="absolute left-[41px] top-16 bottom-32 w-px bg-white/15" />
       
       {STEPS.map((step, i) => {
-        const prevTime = i > 0 ? STEPS[i - 1].time : "07:00";
-        const [h1, m1] = step.time.split(":").map(Number);
-        const [h0, m0] = prevTime.split(":").map(Number);
-        const diffMins = (h1 * 60 + m1) - (h0 * 60 + m0);
-        
-        const mt = i === 0 ? 0 : Math.max(64, diffMins * 1.5);
+        // Standardize the spacing between cards to ensure a clean, consistent visual flow
+        const mt = i === 0 ? 0 : 112; // 112px is equivalent to Tailwind's mt-28
         
         return (
           <div key={step.time} style={{ marginTop: mt }} className="relative ml-8">
