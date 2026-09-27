@@ -5,7 +5,7 @@ import { Reveal } from "../lib/Reveal";
 const FAQS: [string, string][] = [
   [
     "How does the free trial work?",
-    "Your 7-day trial starts when you set up your clinic, with every feature switched on and nothing to pay. When it ends, choose the monthly or annual plan to keep going.",
+    "Your 15-day trial starts when you set up your clinic, with every feature switched on and nothing to pay. When it ends, choose the monthly or annual plan to keep going.",
   ],
   [
     "What do I get on the annual plan?",

@@ -51,7 +51,7 @@ export function Hero() {
                   href={APP_URL}
                   className="btn btn-ink h-[52px] w-full max-w-[320px] justify-center px-7 text-[15.5px] sm:w-auto sm:justify-start"
                 >
-                  Start 7-day free trial
+                  Start 15-day free trial
                   <ArrowRight size={17} className="arrow text-teal-bright" />
                 </a>
                 <a
@@ -67,7 +67,7 @@ export function Hero() {
               </div>
 
               <p className="mt-5 font-mono text-[12px] text-muted-soft">
-                7-day free trial · No credit card required
+                15-day free trial · No credit card required
               </p>
             </div>
           </div>

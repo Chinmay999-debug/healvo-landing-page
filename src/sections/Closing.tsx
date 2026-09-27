@@ -51,13 +51,13 @@ export function Closing() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a href={APP_URL} className="btn btn-teal h-13 px-7 text-[15.5px]">
-              Start your 7-day free trial <ArrowRight size={17} className="arrow" />
+              Start your 15-day free trial <ArrowRight size={17} className="arrow" />
             </a>
             <a href={APP_URL} className="btn btn-ghost-dark h-13 px-6 text-[15.5px]">
               Log in
             </a>
           </div>
-          <p className="mt-6 font-mono text-[12px] text-white/40">7 days free · then ₹499/month or ₹5,988/year + GST</p>
+          <p className="mt-6 font-mono text-[12px] text-white/40">15 days free · then ₹499/month or ₹5,988/year + GST</p>
         </div>
       </div>
 

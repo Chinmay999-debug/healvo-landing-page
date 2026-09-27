@@ -8,7 +8,7 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "How does the 7-day free trial work?",
+    question: "How does the 15-day free trial work?",
     answer: "You get full, unrestricted access to every single feature in Healvo — including the interactive FDI dental chart, clinical consultations, automated GST billing, online patient booking, and Healvo AI copilot. No credit card is required to begin, and there are zero setup fees."
   },
   {

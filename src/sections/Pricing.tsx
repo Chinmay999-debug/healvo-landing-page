@@ -16,7 +16,7 @@ const INCLUDED = [
 ];
 
 const FACTS: [string, string][] = [
-  ["Free trial", "7 days"],
+  ["Free trial", "15 days"],
   ["Monthly", "₹499"],
   ["Annual", "₹5,988"],
   ["Annual access", "14 months"],
@@ -38,7 +38,7 @@ export function Pricing() {
             <em className="text-teal-deep">The whole clinic.</em>
           </h2>
           <p className="mt-7 max-w-[470px] text-[17px] leading-relaxed text-ink-2">
-            No feature tiers and nothing to unlock later. Your 7-day trial starts the moment you set up your clinic,
+            No feature tiers and nothing to unlock later. Your 15-day trial starts the moment you set up your clinic,
             with nothing to pay. Stay monthly, or go annual and get 14 months for the price of 12.
           </p>
           <dl className="mt-10 grid max-w-[470px] grid-cols-2 gap-px overflow-hidden rounded-xl border border-line-strong bg-line-strong">
@@ -94,7 +94,7 @@ export function Pricing() {
                     <Row k={annual ? "Healvo Dental Annual" : "Healvo Dental Monthly"} v={formatINR(annual ? 5988 : 499)} />
                     <Row k="Access" v={annual ? "14 months" : "1 month"} />
                     {annual && <Row k="  incl. bonus" v="2 months free" muted />}
-                    <Row k="Free trial first" v="7 days · ₹0" />
+                    <Row k="Free trial first" v="15 days · ₹0" />
                   </div>
 
                   <Dash />
@@ -124,7 +124,7 @@ export function Pricing() {
                   <Dash />
 
                   <a href={APP_URL} className="btn btn-ink h-12 w-full justify-center font-sans text-[15px]">
-                    Start 7-day free trial <ArrowRight size={17} className="arrow text-teal-bright" />
+                    Start 15-day free trial <ArrowRight size={17} className="arrow text-teal-bright" />
                   </a>
                   <p className="mt-5 text-center text-[10.5px] uppercase tracking-[0.22em] text-muted">
                     ** Thank you. Visit again. **

@@ -43,7 +43,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[16px] font-bold text-white bg-[#0f223a] hover:bg-[#182f4d] rounded-xl transition-all duration-200 shadow-md hover:shadow-xl hover:shadow-slate-900/15 active:scale-[0.99] select-none"
             >
-              <span>Start your 7-day free trial</span>
+              <span>Start your 15-day free trial</span>
               <ArrowRight size={17} className="text-teal-300" />
             </a>
 
@@ -61,7 +61,7 @@ export function Hero() {
           <div className="mt-5 flex items-center justify-center gap-5 text-[13.5px] font-medium text-[#6b7684]">
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-[#0f8a5f]" />
-              <span>7-day free trial</span>
+              <span>15-day free trial</span>
             </div>
             <span className="text-slate-300">·</span>
             <div className="flex items-center gap-2">

@@ -89,7 +89,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center gap-1"
                 >
-                  <span>Start 7-Day Free Trial</span>
+                  <span>Start 15-Day Free Trial</span>
                   <ArrowUpRight size={13} />
                 </a>
               </li>

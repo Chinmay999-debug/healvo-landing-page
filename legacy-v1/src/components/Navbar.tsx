@@ -130,7 +130,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="w-full text-center py-3 text-[14.5px] font-bold text-white bg-[#0f223a] hover:bg-[#182f4d] rounded-xl shadow-sm"
             >
-              Start your 7-day free trial →
+              Start your 15-day free trial →
             </a>
           </div>
         </div>

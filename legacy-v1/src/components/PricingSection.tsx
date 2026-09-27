@@ -29,7 +29,7 @@ export function PricingSection() {
             No hidden setup charges.
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-[#5b6472] font-normal leading-relaxed max-w-xl mx-auto">
-            Try Healvo free for 7 days with full access to all clinical and billing features. No credit card required to start.
+            Try Healvo free for 15 days with full access to all clinical and billing features. No credit card required to start.
           </p>
 
           {/* Billing Cycle Switcher */}
@@ -135,7 +135,7 @@ export function PricingSection() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[16px] font-bold text-white bg-[#0f223a] hover:bg-[#182f4d] rounded-xl transition-all shadow-md hover:shadow-xl active:scale-[0.99]"
               >
-                <span>Start 7-day free trial</span>
+                <span>Start 15-day free trial</span>
                 <ArrowRight size={17} className="text-teal-300" />
               </a>
               <div className="text-[13px] font-semibold text-slate-500">
@@ -151,7 +151,7 @@ export function PricingSection() {
                 <ShieldCheck size={26} />
               </div>
               <h4 className="text-2xl font-black text-[#0f223a]">
-                Why start with our 7-day trial?
+                Why start with our 15-day trial?
               </h4>
               <ul className="space-y-4 text-[14px] text-[#5b6472]">
                 <li className="flex items-start gap-2.5">

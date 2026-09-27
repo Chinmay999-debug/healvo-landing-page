@@ -32,7 +32,7 @@ export function ClosingCta() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[16px] font-bold text-white bg-[#0f223a] hover:bg-[#182f4d] rounded-xl transition-all shadow-md hover:shadow-xl active:scale-[0.99]"
           >
-            <span>Start your 7-day free trial</span>
+            <span>Start your 15-day free trial</span>
             <ArrowRight size={17} className="text-teal-300" />
           </a>
 
@@ -49,7 +49,7 @@ export function ClosingCta() {
         <div className="mt-6 flex items-center justify-center gap-6 text-[13.5px] font-medium text-[#6b7684]">
           <div className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-[#0f8a5f]" />
-            <span>7-day free trial</span>
+            <span>15-day free trial</span>
           </div>
           <span className="text-slate-300">·</span>
           <div className="flex items-center gap-2">
