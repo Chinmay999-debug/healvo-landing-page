@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { APP_URL } from "../lib/site";
+import { appUrl } from "../lib/site";
 import { HealvoLogo } from "../lib/HealvoLogo";
 
 const LINKS: [string, string][] = [
@@ -52,10 +52,10 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <a href={APP_URL} className="hidden px-3 py-2 text-[14px] font-semibold text-ink sm:inline-block">
+          <a href={appUrl()} className="hidden px-3 py-2 text-[14px] font-semibold text-ink sm:inline-block">
             Log in
           </a>
-          <a href={APP_URL} className="btn btn-ink h-10 px-4 text-[14px]">
+          <a href={appUrl()} className="btn btn-ink h-10 px-4 text-[14px]">
             Start free trial
           </a>
           <button
@@ -82,7 +82,7 @@ export function Nav() {
               {label}
             </a>
           ))}
-          <a href={APP_URL} className="block pt-4 text-[15px] font-semibold text-ink">
+          <a href={appUrl()} className="block pt-4 text-[15px] font-semibold text-ink">
             Log in
           </a>
         </nav>

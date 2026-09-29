@@ -48,7 +48,7 @@ const STEPS: Step[] = [
     time: "18:45",
     label: "Healvo AI",
     title: "Ask how the day went.",
-    body: "Healvo AI answers from your clinic's own records: today's schedule, who is still waiting, what you've collected. Plain questions, straight answers.",
+    body: "Healvo AI answers from your clinic's own records: today's schedule, who is still waiting, what you've collected. Plain questions, straight answers. Included in Premium and in your free trial.",
     Scene: AiScene,
   },
 ];

@@ -1,5 +1,5 @@
 import { ArrowRight, Phone } from "lucide-react";
-import { APP_URL } from "../lib/site";
+import { appUrl } from "../lib/site";
 import { useInView } from "../lib/motion";
 import { ALL_TEETH, TOOTH_SHAPES, archPoint } from "../lib/teeth";
 
@@ -50,14 +50,14 @@ export function Closing() {
             Set up your clinic today. Bring your patients, appointments and records into one place with Healvo.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href={APP_URL} className="btn btn-teal h-13 px-7 text-[15.5px]">
+            <a href={appUrl()} className="btn btn-teal h-13 px-7 text-[15.5px]">
               Start your 15-day free trial <ArrowRight size={17} className="arrow" />
             </a>
-            <a href={APP_URL} className="btn btn-ghost-dark h-13 px-6 text-[15.5px]">
+            <a href={appUrl()} className="btn btn-ghost-dark h-13 px-6 text-[15.5px]">
               Log in
             </a>
           </div>
-          <p className="mt-6 font-mono text-[12px] text-white/40">15 days free · then ₹499/month or ₹5,988/year + GST</p>
+          <p className="mt-6 font-mono text-[12px] text-white/40">15-day free trial · No credit card required · Plans from ₹499/month + GST</p>
         </div>
       </div>
 
@@ -92,8 +92,8 @@ function Footer() {
             <div>
               <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-white/35">Account</p>
               <ul className="mt-4 space-y-2.5 text-white/70">
-                <li><a className="hover:text-white" href={APP_URL}>Start free trial</a></li>
-                <li><a className="hover:text-white" href={APP_URL}>Log in</a></li>
+                <li><a className="hover:text-white" href={appUrl()}>Start free trial</a></li>
+                <li><a className="hover:text-white" href={appUrl()}>Log in</a></li>
               </ul>
             </div>
             <div>

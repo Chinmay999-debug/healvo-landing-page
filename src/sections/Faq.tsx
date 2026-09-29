@@ -5,11 +5,15 @@ import { Reveal } from "../lib/Reveal";
 const FAQS: [string, string][] = [
   [
     "How does the free trial work?",
-    "Your 15-day trial starts when you set up your clinic, with every feature switched on and nothing to pay. When it ends, choose the monthly or annual plan to keep going.",
+    "Your 15-day free trial starts when you set up your clinic. No credit card required. The trial includes clinic management and the AI Assistant; WhatsApp appointment confirmations come with Premium. When it ends, choose Core or Premium, monthly or annual.",
   ],
   [
-    "What do I get on the annual plan?",
-    "Exactly the same product as monthly, paid once: ₹5,988 plus GST for 14 months of access. That's 12 months plus 2 months free.",
+    "What's the difference between Core and Premium?",
+    "Core (₹499/month) has everything to run your clinic: patients, appointments, the dental chart, billing, reports and online booking. Premium (₹999/month) adds the AI Assistant and WhatsApp appointment confirmations.",
+  ],
+  [
+    "How does annual billing work?",
+    "Pay for 12 months and get 14 months of access, so 2 months are free. Core Annual is ₹5,988 and Premium Annual is ₹11,988, plus GST.",
   ],
   [
     "Do patients need to download an app to book?",

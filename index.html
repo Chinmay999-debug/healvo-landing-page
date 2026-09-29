@@ -3,6 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      // Automatic Advanced Matching is switched off before init, and stays off
+      // on app.healvo.in too. Left on, the pixel reads form fields and button
+      // text off the page and hashes them into every payload — which is fine on
+      // a brochure site and completely unacceptable one subdomain over, where
+      // the same fields hold patient names and phone numbers. One rule for both
+      // domains is easier to keep true than two.
+      fbq('set', 'autoConfig', false, '1390497239915643');
+      fbq('init', '1390497239915643');
+      fbq('track', 'PageView');
+    </script>
+    <!-- Meta's snippet ships a <noscript> tracking pixel too. It is left out
+         on purpose: this page is rendered by React, so a visitor without JS
+         sees nothing to convert on, and <noscript><img> is invalid inside
+         <head> — the HTML parser rejects the build over it. -->
+    <!-- End Meta Pixel Code -->
+
     <title>Healvo | Dental Clinic Software Made in India</title>
     <meta name="description" content="Manage your dental clinic with Healvo. Appointments, patient records, dental charts, prescriptions, X-rays, billing, reports, online booking and AI assistance in one place." />
     <meta name="robots" content="index, follow" />

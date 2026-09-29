@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { APP_URL } from "../lib/site";
+import { appUrl } from "../lib/site";
 import { LiveChart } from "./LiveChart";
 import { HeroDiagram } from "./HeroDiagram";
 
@@ -48,7 +48,7 @@ export function Hero() {
 
               <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
                 <a
-                  href={APP_URL}
+                  href={appUrl()}
                   className="btn btn-ink h-[52px] w-full max-w-[320px] justify-center px-7 text-[15.5px] sm:w-auto sm:justify-start"
                 >
                   Start 15-day free trial
